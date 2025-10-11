@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "firstmod",
+	"version": "${version}",
+	"name": "First Mod",
+	"description": "My first mod! It's about a new way to start resources generation on a skyblock world.",
+	"authors": [
+		"Bakanne"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/firstmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.bakanne.firstmod.FirstMod"
+		],
+		"fabric-datagen": [
+			"net.bakanne.firstmod.FirstModDataGenerator"
+		],
+      "client": [
+        "net.bakanne.firstmod.FirstModClient"
+      ]
+	},
+	"mixins": [
+		"firstmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.9",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
