@@ -1,3 +1,4 @@
 {
-  "block.mod_id.pulverizer": "Pulverizer"
+  "itemGroup.firstmod": "First Mod",
+  "block.firstmod.pulverizer": "Pulverizer"
 }
