@@ -1,5 +1,8 @@
 package net.bakanne.firstmod;
 
+import net.bakanne.firstmod.block.ModBlocks;
+import net.bakanne.firstmod.block.entity.ModBlockEntities;
+import net.bakanne.firstmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +14,13 @@ public class FirstMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        LOGGER.info("Loading " + MOD_ID);
 
+        ModBlocks.initialize();
+        ModBlocks.registerModBlocks();
+
+        ModBlockEntities.initialize();
+
+        ModItems.initialize();
 	}
 }
