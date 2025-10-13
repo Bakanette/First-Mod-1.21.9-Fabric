@@ -1,6 +1,9 @@
 package net.bakanne.firstmod.block.custom;
 
 
+import net.bakanne.firstmod.block.entity.ModBlockEntities;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -33,15 +36,9 @@ public class PulverizerBlock extends BlockWithEntity {
         return new PulverizerBlockEntity(pos, state);
     }
 
+    @Nullable
     @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!(world.getBlockEntity(pos) instanceof PulverizerBlockEntity pulverizerBlockEntity)) {
-            return super.onUse(state, world, pos, player, hit);
-        }
-
-        pulverizerBlockEntity.incrementClicks();
-        player.sendMessage(Text.literal("You've clicked the block for the " + pulverizerBlockEntity.getClicks() + "th time."), true);
-
-        return ActionResult.SUCCESS;
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return validateTicker(type, ModBlockEntities.PULVERIZER_BLOCK_ENTITY, PulverizerBlockEntity::tick);
     }
 }
