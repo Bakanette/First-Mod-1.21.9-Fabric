@@ -24,7 +24,7 @@ public class ModItems {
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(FirstMod.MOD_ID, "item_group"));
     public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModBlocks.PULVERIZER_BLOCK.asItem()))
-            .displayName(Text.translatable("itemGroup.firstMod"))
+            .displayName(Text.translatable("itemGroup.firstmod"))
             .build();
 
 //    public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
