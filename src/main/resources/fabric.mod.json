@@ -15,8 +15,11 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.bakanne.firstmod.FirstMod"
-		],
+			"net.bakanne.firstmod.FirstMod",
+            "net.bakanne.firstmod.item.FirstModItems",
+            "net.bakanne.firstmod.block.FirstModBlocks",
+            "net.bakanne.firstmod.block.entity.FirstModBlockEntities"
+        ],
 		"fabric-datagen": [
 			"net.bakanne.firstmod.FirstModDataGenerator"
 		],
